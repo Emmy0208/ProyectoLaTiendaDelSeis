@@ -1,0 +1,196 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+header {
+  background: #111;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.buscador input {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* BANNER */
+.banner {
+  display: flex;
+  width: 100%;
+  height: 400px; /* alto del banner */
+}
+
+.banner-item {
+  flex: 1; /* cada lado ocupa la mitad */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Mitad izquierda - Perfumes */
+.banner-item.perfumes {
+  background-color: red;
+}
+
+/* Mitad derecha - Zapatillas */
+.banner-item.zapatillas {
+  background-color: red;
+}
+
+/* Oscurecer un poco la foto para que se lea bien el texto */
+.banner-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.banner-item h2 {
+  position: relative; /* para que quede encima de la sombra */
+}
+
+
+/* PRODUCTOS */
+.mas-vendido {
+  text-align: center;
+  padding: 30px;
+}
+
+.productos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.producto {
+  background: #222;
+  padding: 15px;
+  border-radius: 10px;
+  width: 150px;
+}
+
+/* BENEFICIOS */
+.beneficios {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background: #111;
+}
+
+/* REGISTRO */
+.registro {
+  text-align: center;
+  padding: 30px;
+  background: red;
+}
+
+.registro input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.registro button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: black;
+  color: white;
+  margin-left: 10px;
+}
+
+/* MARCAS */
+.marcas {
+  text-align: center;
+  padding: 40px;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.mas-vendido {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.mas-vendido h2 {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.productos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* para que se acomoden en móviles */
+}
+
+.producto {
+  background: #2a2a2a;
+  border-radius: 10px;
+  padding: 15px;
+  width: 180px;
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.producto img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.producto:hover {
+  transform: scale(1.05);
+}
