@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-09-2025 a las 00:30:37
+-- Tiempo de generación: 20-10-2025 a las 09:06:30
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -66,6 +66,16 @@ CREATE TABLE `entrada` (
   `IdUsuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `entrada`
+--
+
+INSERT INTO `entrada` (`IdEntrada`, `FechaIngreso`, `IdProducto`, `IdUsuario`) VALUES
+(1, '2025-01-01', 1, 7),
+(2, '2025-02-05', 4, 5),
+(3, '2025-02-06', 2, 3),
+(4, '2025-03-08', 3, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -78,6 +88,16 @@ CREATE TABLE `factura` (
   `IdUsuario` int(11) DEFAULT NULL,
   `Total` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `factura`
+--
+
+INSERT INTO `factura` (`IdFactura`, `FechaFactura`, `IdUsuario`, `Total`) VALUES
+(1, '2025-03-08', 4, 430000),
+(2, '2025-02-06', 3, 349000),
+(3, '2025-02-05', 5, 709000),
+(4, '2025-01-01', 7, 618000);
 
 -- --------------------------------------------------------
 
@@ -99,6 +119,17 @@ CREATE TABLE `producto` (
   `Marca` varchar(20) DEFAULT NULL,
   `Descripcion` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`IdProducto`, `Nombre`, `Material`, `Precio`, `Talla_unidadMedida`, `Color`, `Stock`, `Oferta`, `Foto`, `Categoria`, `Marca`, `Descripcion`) VALUES
+(1, 'Puma speedcat', 'Gamusa', 618000, '36-37-38-39-40', 'Rojo', 80, NULL, NULL, 'Zapatillas', 'PUMA', 'Zapatillas rojas creadas e inspiradas para y en los corredores de la F1 ahora en material de gamusa desde la talla 36 a la 40'),
+(2, 'Adidas Campus', 'Gamusa', 340900, '36-37-38-39-40', 'Negro', 80, NULL, NULL, 'Zapatillas', 'ADIDAS', 'Zapatillas negras en gamusa desde la talla 36 a la 40'),
+(3, 'Vans knu skool', 'Gamusa y lona', 430000, '36-37-38-39-40', 'Negro', 80, NULL, NULL, 'Zapatillas', 'VANS', 'Zapatillas negras en gamusa con una l?nea blanca lateral'),
+(4, 'New balance 550', 'cuero, malla y Gamusa', 709000, '36-37-38-39-40', 'verde', 80, NULL, NULL, 'Zapatillas', 'NEW BALANCE', 'Zapatillas blancas con detalles verdes con un estilo retro'),
+(5, 'Lattafa Yara', 'Vidrio', 180000, '100ml, 50ml', 'rosa claro', 80, NULL, NULL, 'Perfumes', 'LATTAFA', 'Famoso perfume para mujer se caracteriza por un aroma dulce, afrutado y cremoso');
 
 -- --------------------------------------------------------
 
@@ -142,6 +173,22 @@ CREATE TABLE `usuario` (
   `Rol` varchar(13) DEFAULT NULL,
   `IdTipoDocum` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`IdUsuario`, `NumDoc`, `TipoDoc`, `NombreCom`, `Correo`, `Password`, `Tel`, `Direccion`, `Rol`, `IdTipoDocum`) VALUES
+(1, 1107867334, 'TI', 'Sofia torres castro', 'sofiatorrca@gmail.com', 'Sofia0909', 2147483647, 'Mp C3 El jordan etp 2', 'Cliente', NULL),
+(2, 1018567224, 'CC', 'Andres castillo morales', 'andrecasmor23@gmail.com', 'Andres123', 2147483647, 'Mz C5 El vergel', 'Cliente', NULL),
+(3, 146321789, 'CC', 'Julia castillo morales', 'juliacasmor25@gmail.com', 'Julia25', 2147483647, 'Mz C5 El vergel', 'Cliente', NULL),
+(4, 1018567224, 'CC', 'mariana ricon mora', 'maririnmo86@gmail.com', 'marimari8686', 2147483647, 'Mj C7 mirador de boqueron', 'Cliente', NULL),
+(5, 142657930, 'TI', 'Mario contreras bello', 'mmariobello@gmail.com', 'bellobello34', 2147483647, 'Mk C9 El vergel', 'Cliente', NULL),
+(6, 107666666, 'CC', 'Dilan camilo blanco castillo', 'camicastillovla24@gmail.com', 'BlancoCastillo25', 2147483647, ' torre 4 apto304 conjunto miraflores', 'Cliente', NULL),
+(7, 1014736991, 'CC', 'Camila saavedra lima', 'camilima34@gmail.com', 'camcami1234', 2147483647, 'Mc C4 barrio villa cindy', 'Administrador', NULL),
+(8, 1013702224, 'TI', 'Andrea rojas primera', 'primerarojas2@gmail.com', 'RojasRojas2', 2147483647, 'Ma C8 calucaima', 'Cliente', NULL),
+(9, 1431567122, 'CC', 'Sebastian jimenez mendoza', 'sebasjimen76@gmail.com', '76mendoza', 2147483647, 'Mg C6 bella vista', 'Cliente', NULL),
+(10, 102476558, 'CC', 'juliana miranda cero', 'cerojuli0222@gmail.com', 'cerojul0222', 2147483647, 'Ml C2 loma alta', 'Cliente', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -219,19 +266,19 @@ ALTER TABLE `devolucion`
 -- AUTO_INCREMENT de la tabla `entrada`
 --
 ALTER TABLE `entrada`
-  MODIFY `IdEntrada` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdEntrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `factura`
 --
 ALTER TABLE `factura`
-  MODIFY `IdFactura` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdFactura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `IdProducto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `tipodocum`
@@ -256,7 +303,6 @@ ALTER TABLE `detallesalida`
 ALTER TABLE `devolucion`
   ADD CONSTRAINT `devolucion_ibfk_1` FOREIGN KEY (`IdEntrada`) REFERENCES `entrada` (`IdEntrada`),
   ADD CONSTRAINT `devolucion_ibfk_2` FOREIGN KEY (`IdProducto`) REFERENCES `producto` (`IdProducto`),
-  ADD CONSTRAINT `devolucion_ibfk_3` FOREIGN KEY (`IdUsuario`) REFERENCES `usuario` (`IdUsuario`),
   ADD CONSTRAINT `devolucion_ibfk_4` FOREIGN KEY (`IdFactura`) REFERENCES `factura` (`IdFactura`);
 
 --
